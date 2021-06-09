@@ -17,11 +17,13 @@
         <Product />
         <AssemblyVersion>1.0.3</AssemblyVersion>
         <FileVersion>1.0.3</FileVersion>
+        <RepositoryUrl>https://github.com/mort8088/mort8088.XML.XmlHelper</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
       <DocumentationFile>bin\Release\net5.0\XmlHelper.xml</DocumentationFile>
-      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+      <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     </PropertyGroup>
 
     <ItemGroup>
