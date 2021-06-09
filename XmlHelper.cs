@@ -187,11 +187,11 @@ namespace mort8088.XML
         /// </summary>
         /// <param name="readFrom">node that has the attribute</param>
         /// <param name="attribName">Name of the Attribute</param>
-        /// <param name="def">The default value to return if the attribute is not found</param>
-        /// <returns>value of the attribute or value of Def if not found</returns>
-        public static bool ReadAttrib(XmlElement readFrom, string attribName, bool def)
+        /// <param name="defaultValue">The default value to return if the attribute is not found</param>
+        /// <returns>value of the attribute or value of defaultValue if not found</returns>
+        public static bool ReadAttrib(XmlElement readFrom, string attribName, bool defaultValue)
         {
-            bool output = def;
+            bool output = defaultValue;
             if (readFrom.Attributes[attribName] != null)
             {
                 bool.TryParse(readFrom.Attributes[attribName].Value, out output);
@@ -204,11 +204,11 @@ namespace mort8088.XML
         /// </summary>
         /// <param name="readFrom">node that has the attribute</param>
         /// <param name="attribName">Name of the Attribute</param>
-        /// <param name="def">The default value to return if the attribute is not found</param>
-        /// <returns>value of the attribute or value of Def if not found</returns>
-        public static int ReadAttrib(XmlElement readFrom, string attribName, int def)
+        /// <param name="defaultValue">The default value to return if the attribute is not found</param>
+        /// <returns>value of the attribute or value of defaultValue if not found</returns>
+        public static int ReadAttrib(XmlElement readFrom, string attribName, int defaultValue)
         {
-            int output = def;
+            int output = defaultValue;
             if (readFrom.Attributes[attribName] != null)
             {
                 int.TryParse(readFrom.Attributes[attribName].Value, out output);
@@ -221,11 +221,11 @@ namespace mort8088.XML
         /// </summary>
         /// <param name="readFrom">node that has the attribute</param>
         /// <param name="attribName">Name of the Attribute</param>
-        /// <param name="def">The default value to return if the attribute is not found</param>
-        /// <returns>value of the attribute or value of Def if not found</returns>
-        public static float ReadAttrib(XmlElement readFrom, string attribName, float def)
+        /// <param name="defaultValue">The default value to return if the attribute is not found</param>
+        /// <returns>value of the attribute or value of defaultValue if not found</returns>
+        public static float ReadAttrib(XmlElement readFrom, string attribName, float defaultValue)
         {
-            float output = def;
+            float output = defaultValue;
             if (readFrom.Attributes[attribName] != null)
             {
                 float.TryParse(readFrom.Attributes[attribName].Value, out output);
@@ -238,11 +238,11 @@ namespace mort8088.XML
         /// </summary>
         /// <param name="readFrom">node that has the attribute</param>
         /// <param name="attribName">Name of the Attribute</param>
-        /// <param name="def">The default value to return if the attribute is not found</param>
-        /// <returns>value of the attribute or value of Def if not found</returns>
-        public static string ReadAttrib(XmlElement readFrom, string attribName, string def)
+        /// <param name="defaultValue">The default value to return if the attribute is not found</param>
+        /// <returns>value of the attribute or value of defaultValue if not found</returns>
+        public static string ReadAttrib(XmlElement readFrom, string attribName, string defaultValue)
         {
-            string output = def;
+            string output = defaultValue;
             if (readFrom.Attributes[attribName] != null)
             {
                 output = readFrom.Attributes[attribName].Value;
@@ -258,8 +258,8 @@ namespace mort8088.XML
         /// <returns>inner text of the node or null if not found.</returns>        
         public static string ReadTextNode(XmlElement readFrom, string nodeName)
         {
-            XmlNode node = readFrom.SelectSingleNode(string.Format("./{0}", nodeName));
-            return node != null ? node.InnerText : null;
+            XmlNode node = readFrom.SelectSingleNode($"./{nodeName}");
+            return node?.InnerText;
         }
 
         /// <summary>
@@ -267,13 +267,13 @@ namespace mort8088.XML
         /// </summary>
         /// <param name="readFrom">node that has the attribute</param>
         /// <param name="nodeName">Name of the Attribute</param>
-        /// <param name="def">The default value to return if the attribute is not found</param>
-        /// <returns>value of the attribute or value of Def if not found</returns>
-        public static bool ReadTextNode(XmlElement readFrom, string nodeName, bool def)
+        /// <param name="defaultValue">The default value to return if the attribute is not found</param>
+        /// <returns>value of the attribute or value of defaultValue if not found</returns>
+        public static bool ReadTextNode(XmlElement readFrom, string nodeName, bool defaultValue)
         {
 
-            if (readFrom.SelectSingleNode(string.Format("./{0}", nodeName)) == null)
-                return def;
+            if (readFrom.SelectSingleNode($"./{nodeName}") == null)
+                return defaultValue;
 
             bool output;
             bool.TryParse(ReadTextNode(readFrom, nodeName), out output);
@@ -285,12 +285,12 @@ namespace mort8088.XML
         /// </summary>
         /// <param name="readFrom">node that has the attribute</param>
         /// <param name="nodeName">Name of the Attribute</param>
-        /// <param name="def">The default value to return if the attribute is not found</param>
-        /// <returns>value of the attribute or value of Def if not found</returns>
-        public static int ReadTextNode(XmlElement readFrom, string nodeName, int def)
+        /// <param name="defaultValue">The default value to return if the attribute is not found</param>
+        /// <returns>value of the attribute or value of defaultValue if not found</returns>
+        public static int ReadTextNode(XmlElement readFrom, string nodeName, int defaultValue)
         {
-            int output = def;
-            if (readFrom.SelectSingleNode(string.Format("./{0}", nodeName)) != null)
+            int output = defaultValue;
+            if (readFrom.SelectSingleNode($"./{nodeName}") != null)
             {
                 int.TryParse(ReadTextNode(readFrom, nodeName), out output);
             }
@@ -302,12 +302,12 @@ namespace mort8088.XML
         /// </summary>
         /// <param name="readFrom">node that has the attribute</param>
         /// <param name="nodeName">Name of the Attribute</param>
-        /// <param name="def">The default value to return if the attribute is not found</param>
-        /// <returns>value of the attribute or value of Def if not found</returns>
-        public static float ReadTextNode(XmlElement readFrom, string nodeName, float def)
+        /// <param name="defaultValue">The default value to return if the attribute is not found</param>
+        /// <returns>value of the attribute or value of defaultValue if not found</returns>
+        public static float ReadTextNode(XmlElement readFrom, string nodeName, float defaultValue)
         {
-            float output = def;
-            if (readFrom.SelectSingleNode(string.Format("./{0}", nodeName)) != null)
+            float output = defaultValue;
+            if (readFrom.SelectSingleNode($"./{nodeName}") != null)
             {
                 float.TryParse(ReadTextNode(readFrom, nodeName), out output);
             }
@@ -319,12 +319,12 @@ namespace mort8088.XML
         /// </summary>
         /// <param name="readFrom">node that has the attribute</param>
         /// <param name="nodeName">Name of the Attribute</param>
-        /// <param name="def">The default value to return if the attribute is not found</param>
-        /// <returns>value of the attribute or value of Def if not found</returns>
-        public static string ReadTextNode(XmlElement readFrom, string nodeName, string def)
+        /// <param name="defaultValue">The default value to return if the attribute is not found</param>
+        /// <returns>value of the attribute or value of defaultValue if not found</returns>
+        public static string ReadTextNode(XmlElement readFrom, string nodeName, string defaultValue)
         {
-            XmlNode node = readFrom.SelectSingleNode(string.Format("./{0}", nodeName));
-            return node != null ? node.InnerText : def;
+            XmlNode node = readFrom.SelectSingleNode($"./{nodeName}");
+            return node != null ? node.InnerText : defaultValue;
         }
     }
 }
