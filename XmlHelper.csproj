@@ -10,7 +10,7 @@
         <Authors>Dave 'mort8088' Henry</Authors>
         <Description>XmlHelper makes it easier for developers to create and read data in XML documents by condensing common tasks into a simple static helper class.</Description>
         <Copyright>Copyright (c) 2021 Dave 'mort8088' Henry</Copyright>
-        <PackageProjectUrl>http://mort8088.com/category/non_games/xmlhelper/</PackageProjectUrl>
+        <PackageProjectUrl>https://mort8088.com/2021/12/29/xmlhelper/</PackageProjectUrl>
         <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
         <PackageTags>XML, static</PackageTags>
         <PackageReleaseNotes>rewritten for use with .NET Core</PackageReleaseNotes>
