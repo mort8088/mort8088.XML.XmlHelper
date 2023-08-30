@@ -1,41 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
         <RootNamespace>mort8088.XML</RootNamespace>
+
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>mort8088.XML.XmlHelper</PackageId>
-        <PackageVersion>1.0.3</PackageVersion>
+        <PackageVersion>1.0.4</PackageVersion>
         <Title>mort8088.XML.XmlHelper</Title>
         <Authors>Dave 'mort8088' Henry</Authors>
+        <Company>mort8088</Company>
         <Description>XmlHelper makes it easier for developers to create and read data in XML documents by condensing common tasks into a simple static helper class.</Description>
-        <Copyright>Copyright (c) 2021 Dave 'mort8088' Henry</Copyright>
-        <PackageProjectUrl>https://mort8088.com/2021/12/29/xmlhelper/</PackageProjectUrl>
+        <Copyright>Copyright (c) 2021-2023 Dave 'mort8088' Henry</Copyright>
+        <PackageProjectUrl>https://github.com/mort8088/mort8088.XML.XmlHelper</PackageProjectUrl>
         <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
         <PackageTags>XML, static</PackageTags>
-        <PackageReleaseNotes>rewritten for use with .NET Core</PackageReleaseNotes>
+        <PackageReleaseNotes>Updated to use .NET 7.0</PackageReleaseNotes>
         <Product />
-        <AssemblyVersion>1.0.3</AssemblyVersion>
-        <FileVersion>1.0.3</FileVersion>
+        <AssemblyVersion>1.0.4</AssemblyVersion>
+        <FileVersion>1.0.4</FileVersion>
         <RepositoryUrl>https://github.com/mort8088/mort8088.XML.XmlHelper</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DocumentationFile>bin\Release\net5.0\XmlHelper.xml</DocumentationFile>
-      <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <Compile Remove="Old .NET FW4\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="Old .NET FW4\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Old .NET FW4\**" />
-    </ItemGroup>
-
 </Project>
