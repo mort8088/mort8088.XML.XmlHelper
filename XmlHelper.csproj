@@ -16,6 +16,7 @@
         <Copyright>Copyright (c) 2021-2023 Dave 'mort8088' Henry</Copyright>
         <PackageProjectUrl>https://github.com/mort8088/mort8088.XML.XmlHelper</PackageProjectUrl>
         <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageTags>XML, static</PackageTags>
         <PackageReleaseNotes>Updated to use .NET 7.0</PackageReleaseNotes>
         <Product />
@@ -24,4 +25,7 @@
         <RepositoryUrl>https://github.com/mort8088/mort8088.XML.XmlHelper</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
 </Project>
